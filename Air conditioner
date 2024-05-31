@@ -1,0 +1,29 @@
+class AirConditioner:
+    def __init__(self):
+        self.is_on = False
+        self.temperature = 24  # Default temperature
+    
+    def turn_on(self):
+        if not self.is_on:
+            self.is_on = True
+            print("The AC is now ON.")
+        else:
+            print("The AC is already ON.")
+    
+    def turn_off(self):
+        if self.is_on:
+            self.is_on = False
+            print("The AC is now OFF.")
+        else:
+            print("The AC is already OFF.")
+    
+    def set_temperature(self, temp):
+        if self.is_on:
+            self.temperature = temp
+            print(f"The temperature is set to {self.temperature}°C.")
+        else:
+            print("Turn on the AC first.")
+    
+    def get_status(self):
+        status = "ON" if self.is_on else "OFF"
+        print(f"AC Status: {status}, Temperature: {self.temperature}°C")
